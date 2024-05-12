@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    username: root
+    url: jdbc:tc:mysql:latest:///employeedb
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+  kafka:
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: org.demo.kafka.kafkaconsumer.model
+      group-id: registration
