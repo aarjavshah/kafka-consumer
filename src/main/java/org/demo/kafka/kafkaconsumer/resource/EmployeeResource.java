@@ -16,12 +16,12 @@ public class EmployeeResource {
     private final EmployeeService employeeService;
 
     @GetMapping("/employees/{employeeId}")
-    public Employee getEmployee(@PathVariable(name="employeeId") Integer employeeId){
+    public Employee getEmployee(@PathVariable(name = "employeeId") Integer employeeId) {
         return employeeService.getEmployee(employeeId);
     }
 
     @PostMapping("/employees")
-    public void createEmployee(@RequestBody Employee employee){
+    public void createEmployee(@RequestBody Employee employee) {
         employeeService.createEmployee(employee);
     }
 }
